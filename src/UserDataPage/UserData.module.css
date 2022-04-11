@@ -1,0 +1,54 @@
+
+.parentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e8eaf6;
+}
+.userData {
+    max-width: 850px;
+    width: 100%;
+    position: relative;
+}
+
+.userData ul {
+    border: 0.5px solid #bdbdbd;
+    box-shadow: 0 0 15px 4px rgb(0 0 0 / 6%);
+}
+
+ .userData input {
+   padding: 5px;
+   margin: 20px 0px 17px 5px;
+   border: 1px solid #bdbdbd;
+   border-radius: 5px;
+   outline: none;
+   opacity: 0.6;
+}
+
+.userData p {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 7px;
+    position: absolute;
+}
+
+.userData button {
+    position: absolute;
+    right: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.btnSend  {
+    border: solid #bdbdbd;
+    background-color: #bdbdbd;
+}
+
+.btnEdit {
+    border: solid blue;
+    top: 15px;
+    background-color: blue;
+}

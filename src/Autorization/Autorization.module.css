@@ -1,0 +1,61 @@
+
+  
+  .autorization {
+    background-color: #e8eaf6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .autorization form {
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    padding: 100px;
+    border-radius: 15px;
+    background-color: #fafafa;
+  
+    
+  }
+  
+  .autorization label {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    
+  }
+  
+  .autorization input {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0.5px solid #bdbdbd;
+    display: block;
+    margin-top: 5px;
+    outline: none;
+  }
+  
+  .autorization button {
+     height: 30px;
+     padding: 7px;
+     margin-top: 15px;
+     border-radius: 10px;
+     border: 0;
+     
+  
+  }
+  
+  .autorization Link {
+    height: 30px;
+     padding: 7px;
+     margin-top: 15px;
+     border-radius: 10px;
+     border: 0;
+     text-decoration: none;
+    
+  }
+  
+  .error {
+    padding-top: 15px;
+    font-size: 15px;
+    color: red;
+  }
