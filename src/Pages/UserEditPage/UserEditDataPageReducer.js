@@ -7,7 +7,6 @@ const initialState = {
 
 
 const UserEditDataPageReducer = (state = initialState, action) => {
-    debugger
     switch (action.type) {
         case USER_EDIT_DATA:
             return {
