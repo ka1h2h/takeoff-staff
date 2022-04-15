@@ -764,11 +764,16 @@
       "email": "sdfsdfsdf@mail.ru",
       "password": "$2a$10$tePTvYtnzdxd.ILQzOOzM.vaOjwHnTvjoEAMtUkXJ1tXlwly/Zi/K",
       "id": 153
+    },
+    {
+      "email": "nc@mail.ru",
+      "password": "$2a$10$UnSUiwPQfh7hPQM5ATKjG.fTtsjWkV/mQMJoATwJoII3mYJcMtwae",
+      "id": 154
     }
   ],
   "profiles": [
     {
-      "name": "12333333",
+      "name": "Работает вроде",
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
       "address": {

@@ -19,6 +19,10 @@ const UserData = (props) => {
             navigate('/authorization')
     }, [])
 
+    useEffect(() => {
+        dispatch(requestUserId(id))
+    }, [id])
+
 
     return (
         <div className={s.parentContainer}>

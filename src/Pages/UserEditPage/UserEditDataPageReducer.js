@@ -23,5 +23,4 @@ const UserEditDataPageReducer = (state = initialState, action) => {
 
 export const UserEditData = (payload) => ({ type: USER_EDIT_DATA, payload })
 
-
 export default UserEditDataPageReducer

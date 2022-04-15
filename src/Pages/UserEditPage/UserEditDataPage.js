@@ -16,6 +16,7 @@ function UserEditDataPage(props) {
         if (store === false)
             navigate('/authorization')
     }, [])
+    const dispatch = useDispatch()
     const userDataId = useSelector(state => state.receptionUserId.users)
 
     const formik = useFormik({
@@ -30,10 +31,6 @@ function UserEditDataPage(props) {
             website: userDataId.website
         }
     })
-
-    console.log(window.store.getState())
-    const dispatch = useDispatch()
-
 
     return (
         <div className={s.parentContainer}>
@@ -64,8 +61,6 @@ function UserEditDataPage(props) {
             </div>
         </div>
     )
-
 }
-
 
 export default UserEditDataPage
