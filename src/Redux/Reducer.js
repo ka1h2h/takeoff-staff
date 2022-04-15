@@ -2,6 +2,7 @@ import * as actions from './ActionTypes'
 
 
 let initialState = {
+    email: '',
     isReg: false,
     isAuth: false,
     users: [],

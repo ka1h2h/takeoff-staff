@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import s from './Registration.module.css'
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { registr } from "./../Redux/Actions"
+import { registr } from './RegistrationAction'
 
 
 const Registration = (props) => {
@@ -60,7 +60,7 @@ const Registration = (props) => {
     }
 
     const dispatch = useDispatch()
-    const thunk = useSelector(state => state.isReg)
+    const thunk = useSelector(state => state.registration.isReg)
     const navigate = useNavigate()
 
     const handleFormSubmit = e => {
@@ -69,7 +69,7 @@ const Registration = (props) => {
 
     useEffect(() => {
         if (thunk === true) {
-            return navigate('/autorization')
+            return navigate('/authorization')
         }
     })
 

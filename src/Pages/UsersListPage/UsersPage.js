@@ -1,26 +1,25 @@
 import React, { useEffect } from 'react'
-import s from './User.module.css'
+import s from './UsersPage.module.css'
 import { useDispatch, useSelector, } from 'react-redux'
-import { useNavigate, Link } from 'react-router-dom'
-import { requestAllUsers } from '../Redux/Actions'
+import { useNavigate, Link, useParams } from 'react-router-dom'
+import { requestAllUsers } from './UsersPageAction'
 
 function Home() {
-
     const dispatch = useDispatch()
-
-    const store = useSelector(state => state.isAuth)
+    const store = useSelector(state => state.authorization.isAuth)
     const navigate = useNavigate()
+
     useEffect(() => {
         if (store === false)
-            navigate('/autorization')
+            navigate('/authorization')
     }, [])
-
-
 
     useEffect(() => {
         dispatch(requestAllUsers())
     }, [])
-    const thunk = useSelector(state => state.users)
+    const thunk = useSelector(state => state.reception.users)
+    console.log(thunk)
+
 
 
     return (
@@ -31,12 +30,12 @@ function Home() {
                     <ul key={person.id}>
                         <li><span>Name:</span> {person.name}</li>
                         <li><span>City:</span> {person.address.city}</li>
-                        <li><span>Company:</span> {person.company.name}
-                            <Link className={s.link} key={person.id} to={`/users/${person.id}`}>Подробнее</Link></li>
+                        <li><span>Company:</span> {person.phone}
+                            <Link className={s.link} key={person.id} to={`/profiles/${person.id}`}>Подробнее</Link></li>
                     </ul>
                 )}
             </div>
-        </div>
+        </div >
     )
 }
 

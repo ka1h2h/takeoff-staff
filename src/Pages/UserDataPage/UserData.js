@@ -2,35 +2,36 @@ import s from './UserData.module.css'
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect } from 'react'
-import { userRequestById } from './../Redux/Actions';
+import { requestUserId } from './UserDataPageAction'
 
 
-const UserData = () => {
+const UserData = (props) => {
 
     const { id } = useParams()
+
     const dispatch = useDispatch()
-    const userDataId = useSelector(state => state.id.data)
-    const store = useSelector(state => state.isAuth)
+    const userDataId = useSelector(state => state.receptionUserId.users)
+    console.log(userDataId)
+    const store = useSelector(state => state.authorization.isAuth)
     const navigate = useNavigate()
     useEffect(() => {
         if (store === false)
-            navigate('/autorization')
+            navigate('/authorization')
     }, [])
+
     useEffect(() => {
-        dispatch(userRequestById(id))
-    }, [])
-
-
+        dispatch(requestUserId(id))
+    })
 
     return (
         <div className={s.parentContainer}>
             <div className={s.userData}>
                 <h3>Профиль пользователя</h3>
-                <Link to={`/users/${id}/edit`} userDataId={userDataId}>
+                <Link to={`/profiles/${id}/edit`}>
                     <button className={s.btnEdit}>Редактировать</button>
                 </Link>
-                {userDataId &&
-                    <ul key={userDataId.id}>
+                {userDataId.id &&
+                    <ul key={userDataId}>
                         <p>Name</p>
                         <li><input type="text" value={userDataId.name} readOnly /></li>
                         <p>User name</p>

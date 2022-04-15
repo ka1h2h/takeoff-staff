@@ -1,29 +1,22 @@
 import './App.css';
-import Registration from './Registration/Registration';
-import Authorization from './Autorization/Autorization';
-import User from './UsersList/User'
-import UserData from './UserDataPage/UserData';
-import EditUserData from './UserDataPage/EditUserDataPage'
+import Registration from './Pages/Registration/Registration';
+import Authorization from './Pages/Authorization/Authorization';
+import UsersPage from './Pages/UsersListPage/UsersPage'
+import UserData from './Pages/UserDataPage/UserData';
+import UserEditDataPage from './Pages/UserEditPage/UserEditDataPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
 
-
-
-
-
-
-
   return (
     <BrowserRouter>
-
       <Routes >
         <Route path="/" element={<Registration />} />
-        <Route path="/autorization" element={<Authorization />} />
-        <Route path="/users" element={<User />} />
-        <Route path="/users/:id" element={<UserData />} />
-        <Route path="/users/:id/:edit" element={<EditUserData />} />
+        <Route path="/authorization" element={<Authorization />} />
+        <Route path="/profiles" element={<UsersPage />} />
+        <Route path="/profiles/:id" element={<UserData />} />
+        <Route path="/profiles/:id/:edit" element={<UserEditDataPage />} />
       </Routes>
 
     </BrowserRouter>

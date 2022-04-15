@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import s from './Authorization.module.css'
+import { autoriz } from './AuthorizationAction'
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const Registration = (props) => {
+const Authorization = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [checkEmail, setCheckEmail] = useState(false)
@@ -52,30 +55,33 @@ const Registration = (props) => {
         }
     }
 
-    const autorization = (email, password) => {
-        try {
-            const response = axios.post('http://localhost:3001/login', {
-                email,
-                password
-            })
-            debugger
-            alert(response.data);
-        } catch (e) {
-            alert(e)
+    const thunk = useSelector(state => state.authorization.isAuth)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const handleFormSubmit = e => {
+        e.preventDefault();
+    };
+
+    useEffect(() => {
+        if (thunk === true) {
+            return navigate('/profiles')
         }
-    }
+    })
+
 
 
     return (
-        <form>
-
-            {(checkEmail && emailError) ? <p className="error">{emailError}</p> : <label>E-mail</label>}
-            <input onChange={emailHandler} value={email} onBlur={e => blurHandler(e)} type='text' name='email' />
-            {(checkPassword && passwordError) ? <p className="error">{passwordError}</p> : <label>Пароль</label>}
-            <input onChange={passwordHandler} value={password} onBlur={e => blurHandler(e)} type='password' name='password' />
-            <button disabled={!formValid} onClick={() => autorization(email, password)} type='submit'>Войти</button>
-        </form>
+        <div className={s.autorization}>
+            <form onSubmit={handleFormSubmit}>
+                {(checkEmail && emailError) ? <p className="error">{emailError}</p> : <label>E-mail</label>}
+                <input onChange={emailHandler} value={email} onBlur={e => blurHandler(e)} type='text' name='email' />
+                {(checkPassword && passwordError) ? <p className="error">{passwordError}</p> : <label>Пароль</label>}
+                <input onChange={passwordHandler} value={password} onBlur={e => blurHandler(e)} type='password' name='password' />
+                <button disabled={!formValid} onClick={() => dispatch(autoriz(email, password))} type='submit'>Войти</button>
+            </form>
+        </div>
     )
 }
 
-export default Registration
+export default Authorization
