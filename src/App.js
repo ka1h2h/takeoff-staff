@@ -7,7 +7,7 @@ import UserEditDataPage from './Pages/UserEditPage/UserEditDataPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
-function App() {
+const App = () => {
 
   return (
     <BrowserRouter>
@@ -18,7 +18,6 @@ function App() {
         <Route path="/profiles/:id" element={<UserData />} />
         <Route path="/profiles/:id/:edit" element={<UserEditDataPage />} />
       </Routes>
-
     </BrowserRouter>
   );
 }

@@ -18,20 +18,22 @@
 }
 
  .userData input {
-   padding: 5px;
-   margin: 20px 0px 17px 5px;
-   border: 1px solid #bdbdbd;
-   border-radius: 5px;
-   outline: none;
-   opacity: 0.6;
+    max-width: 200px;
+    max-height: 25px;
+    margin-top: 20px;
+    padding: 3px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.6;
 }
 
 .userData p {
     font-size: 12px;
     font-weight: bold;
-    padding-left: 7px;
     position: absolute;
 }
+
 
 .userData button {
     position: absolute;
@@ -49,6 +51,13 @@
 
 .btnEdit {
     border: solid blue;
+    top: 15px;
+    background-color: blue;
+}
+
+.btnList {
+    border: solid blue;
+    margin-right: 130px;
     top: 15px;
     background-color: blue;
 }

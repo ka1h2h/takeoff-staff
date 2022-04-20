@@ -1,32 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import s from './UserEditDataPage.module.css'
-import { useDispatch, useSelector, connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useFormik } from 'formik'
-import { receptionDataValue } from './UserEditDataPageAction'
+import { receptionDataValue } from './Action'
 
-function UserEditDataPage(props) {
+const UserEditDataPage = (props) => {
 
-
-
-    const { id } = useParams()
-    const store = useSelector(state => state.authorization.isAuth)
     const navigate = useNavigate()
-    useEffect(() => {
-        if (store === false)
-            navigate('/authorization')
-    }, [])
+    const { id } = useParams()
     const dispatch = useDispatch()
     const userDataId = useSelector(state => state.receptionUserId.users)
+    const store = useSelector(state => state.receptionUserId.isAuth)
+    useEffect(() => {
+        if (!store)
+            return navigate('/authorization')
+    }, [])
+
+    const sendHandler = () => {
+        if (dispatch(receptionDataValue(formik.values, id)))
+            return navigate(`/profiles/${id}`)
+    }
 
     const formik = useFormik({
         initialValues: {
             name: userDataId.name,
             username: userDataId.username,
             email: userDataId.email,
-            street: userDataId.address.street,
-            city: userDataId.address.city,
-            zipcode: userDataId.address.zipcode,
+            address: {
+                street: userDataId.street,
+                city: userDataId.city,
+                zipcode: userDataId.zipcode,
+            },
             phone: userDataId.phone,
             website: userDataId.website
         }
@@ -51,15 +56,14 @@ function UserEditDataPage(props) {
                         <p>Zip code</p>
                         <li><input value={formik.values.zipcode} onChange={formik.handleChange} name='zipcode' type='text' /></li>
                         <p>Phone</p>
-                        <li><input value={formik.values.phone} onChange={formik.handleChange} name='phone' type='text' /></li>
+                        <li><input value={formik.values.phone} onChange={formik.handleChange} name='phone' type='number' /></li>
                         <p>Website</p>
-                        <li><input value={formik.values.website} onChange={formik.handleChange} name='website' type='text' /></li>
+                        <li><input value={formik.values.website} onChange={formik.handleChange} name='website' type='site' /></li>
                     </ul>
-                    <button className={s.btnEdit} onClick={() => dispatch(receptionDataValue(formik.values, id))} type='sumbit'>Сохранить</button>
+                    <button className={s.btnEdit} onClick={() => sendHandler()} type='sumbit'>Сохранить</button>
                 </form>
-
             </div>
-        </div>
+        </div >
     )
 }
 

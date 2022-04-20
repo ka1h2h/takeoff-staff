@@ -1,31 +1,27 @@
-
-  
   .registration {
     background-color: #e8eaf6;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-  
-  
   }
-  
+
   .registration form {
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     padding: 100px;
     border-radius: 15px;
     background-color: #fafafa;
-  
-    
+    max-width: 252px;
+    height: 100%;
+    max-height: 177px;
+    width: 100%;
   }
   
   .registration label {
     display: block;
     margin-top: 10px;
     font-size: 15px;
-    
-  }
-  
+  }  
   .registration input {
     width: 250px;
     height: 30px;
@@ -42,8 +38,6 @@
      margin-top: 15px;
      border-radius: 10px;
      border: 0;
-     
-  
   }
   
   .registration Link {
@@ -53,11 +47,10 @@
      border-radius: 10px;
      border: 0;
      text-decoration: none;
-    
   }
   
-  .error {
-    padding-top: 15px;
-    font-size: 15px;
-    color: red;
-  }
+  .authorizationLink  {
+    margin-top: 45px;
+    text-align: center;
+    font-size: 14px;
+  } 

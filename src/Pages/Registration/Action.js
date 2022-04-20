@@ -1,5 +1,5 @@
 import axios from "axios"
-import { setUserData } from "./RegistrationReducer"
+import { setUserData } from "./Reducer"
 
 export const registr = (email, password) => {
     return async dispatch => {

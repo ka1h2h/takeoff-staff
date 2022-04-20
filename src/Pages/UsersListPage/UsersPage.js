@@ -2,15 +2,15 @@ import React, { useEffect } from 'react'
 import s from './UsersPage.module.css'
 import { useDispatch, useSelector, } from 'react-redux'
 import { useNavigate, Link, useParams } from 'react-router-dom'
-import { requestAllUsers } from './UsersPageAction'
+import { requestAllUsers } from './Action'
 
-function Home() {
+const Home = () => {
     const dispatch = useDispatch()
     const store = useSelector(state => state.authorization.isAuth)
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (store === false)
+        if (!store)
             navigate('/authorization')
     }, [])
 
@@ -18,7 +18,7 @@ function Home() {
         dispatch(requestAllUsers())
     }, [])
     const thunk = useSelector(state => state.reception.users)
-    console.log(thunk)
+
 
 
 

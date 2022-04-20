@@ -1,5 +1,5 @@
 import axios from "axios"
-import { usersRequest } from "./UsersReducer"
+import { usersRequest } from "./Reducer"
 
 
 export const requestAllUsers = () => {

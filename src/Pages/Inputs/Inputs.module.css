@@ -1,0 +1,15 @@
+input {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0.5px solid #bdbdbd;
+    display: block;
+    margin-top: 5px;
+    outline: none;
+  }
+
+.error {
+    padding-top: 15px;
+    font-size: 15px;
+    color: red;
+  }

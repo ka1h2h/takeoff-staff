@@ -4,7 +4,7 @@ const initialState = {
     isAuth: false
 }
 
-const AuthorizationReducer = (state = initialState, action) => {
+export const AuthorizationReducer = (state = initialState, action) => {
     switch (action.type) {
         case AUT_USER:
             return {
@@ -21,4 +21,4 @@ const AuthorizationReducer = (state = initialState, action) => {
 
 export const setUserLogin = (email, isAuth) => ({ type: AUT_USER, data: { email, isAuth } });
 
-export default AuthorizationReducer
+

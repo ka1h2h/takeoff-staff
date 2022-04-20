@@ -4,7 +4,7 @@ const initialState = {
     isReg: false
 }
 
-const RegistrationReducer = (state = initialState, action) => {
+export const RegistrationReducer = (state = initialState, action) => {
     switch (action.type) {
         case REG_USER:
             return {
@@ -19,4 +19,4 @@ const RegistrationReducer = (state = initialState, action) => {
 
 export const setUserData = (email, isReg) => ({ type: REG_USER, data: { email, isReg } });
 
-export default RegistrationReducer
+

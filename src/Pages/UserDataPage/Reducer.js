@@ -2,10 +2,10 @@ export const CHANGE_USER_DATA_PAGE = 'CHANGE_USER_DATA'
 
 const initialState = {
     isAuth: false,
-    users: []
+    users: {}
 }
 
-const UserDataPageReducer = (state = initialState, action) => {
+export const UserDataPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_USER_DATA_PAGE:
             return {
@@ -18,8 +18,4 @@ const UserDataPageReducer = (state = initialState, action) => {
     }
 }
 
-
 export const changeUserDataPage = (payload) => ({ type: CHANGE_USER_DATA_PAGE, payload })
-
-
-export default UserDataPageReducer

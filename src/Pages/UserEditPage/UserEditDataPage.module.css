@@ -17,32 +17,20 @@
     box-shadow: 0 0 15px 4px rgb(0 0 0 / 6%);
 } 
 
- .editUser input {
-   padding: 5px;
-   margin: 20px 0px 17px 5px;
-   border: 1px solid #bdbdbd;
-   border-radius: 5px;
-   outline: none;
-   
-  
-} 
-
 .editUser p {
     font-size: 12px;
     font-weight: bold;
-    padding-left: 7px;
     position: absolute;
 }
 
- .editUser textarea {
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
-    resize: none;
-    outline: none;
-    padding: 5px;
-    margin: 20px 0px 20px 5px;
-    width: 97%;
-    height: 55px;
+ .editUser input {
+   max-width: 200px;
+   max-height: 25px;
+   margin-top: 20px;
+   padding: 3px;
+   border: 1px solid #bdbdbd;
+   border-radius: 5px;
+   outline: none;
 } 
 
  .editUser button {
@@ -53,7 +41,6 @@
     color: white;
     cursor: pointer;
 } 
-
 
 .editUser .btnEdit {
     border: solid blue;

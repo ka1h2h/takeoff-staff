@@ -5,7 +5,7 @@ const initialState = {
     users: []
 }
 
-const UsersReducer = (state = initialState, action) => {
+export const UsersReducer = (state = initialState, action) => {
     switch (action.type) {
         case REQUEST_USERS:
             return {
@@ -22,5 +22,3 @@ const UsersReducer = (state = initialState, action) => {
 
 export const usersRequest = (payload) => ({ type: REQUEST_USERS, payload })
 
-
-export default UsersReducer

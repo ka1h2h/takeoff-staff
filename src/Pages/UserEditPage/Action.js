@@ -1,6 +1,5 @@
-
 import axios from 'axios'
-import { UserEditData } from './UserEditDataPageReducer'
+import { UserEditData } from './Reducer'
 
 
 export const receptionDataValue = (payload, id) => {

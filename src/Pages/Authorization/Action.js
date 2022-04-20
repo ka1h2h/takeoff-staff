@@ -1,5 +1,5 @@
 import axios from "axios"
-import { setUserLogin } from './AuthorizationReducer'
+import { setUserLogin } from './Reducer'
 
 export const autoriz = (email, password) => {
     return async dispatch => {

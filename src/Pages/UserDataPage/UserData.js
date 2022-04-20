@@ -2,27 +2,24 @@ import s from './UserData.module.css'
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect } from 'react'
-import { requestUserId } from './UserDataPageAction'
+import { requestUserId } from './Action'
 
 
 const UserData = (props) => {
 
     const { id } = useParams()
-
     const dispatch = useDispatch()
     const userDataId = useSelector(state => state.receptionUserId.users)
-    console.log(userDataId)
     const store = useSelector(state => state.authorization.isAuth)
     const navigate = useNavigate()
     useEffect(() => {
-        if (store === false)
+        if (!store)
             navigate('/authorization')
     }, [])
 
     useEffect(() => {
         dispatch(requestUserId(id))
     }, [id])
-
 
     return (
         <div className={s.parentContainer}>
@@ -31,6 +28,7 @@ const UserData = (props) => {
                 <Link to={`/profiles/${id}/edit`}>
                     <button className={s.btnEdit}>Редактировать</button>
                 </Link>
+                <Link to={'/profiles'}><button className={s.btnList}>Список пользователей</button></Link>
                 {userDataId.id &&
                     <ul key={userDataId}>
                         <p>Name</p>
@@ -51,11 +49,9 @@ const UserData = (props) => {
                         <li><input type="text" value={userDataId.website} readOnly /></li>
                     </ul>
                 }
-                <button className={s.btnSend}>Отправить</button>
             </div>
         </div>
     )
 }
-
 
 export default UserData

@@ -1,6 +1,5 @@
 import axios from "axios"
-import { changeUserDataPage } from "./UserDataPageReducer"
-
+import { changeUserDataPage } from "./Reducer"
 
 export const requestUserId = (id) => {
     return async dispatch => {
