@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import s from './Registration.module.css'
-import Email from "./../Inputs/Email";
-import Password from "./../Inputs/Password";
+import Email from "./../../Components/Inputs/Email"
+import Password from "./../../Components/Inputs/Password"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, Link } from "react-router-dom"
 import { registr } from './Action'

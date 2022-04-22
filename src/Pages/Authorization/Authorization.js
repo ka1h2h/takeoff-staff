@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Email from "./../Inputs/Email";
-import Password from "./../Inputs/Password";
+import Email from "./../../Components/Inputs/Email"
+import Password from "./../../Components/Inputs/Password"
 import s from './Authorization.module.css'
 import { autoriz } from './Action'
 import { useDispatch, useSelector } from "react-redux";
